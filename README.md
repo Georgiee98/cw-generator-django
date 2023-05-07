@@ -16,7 +16,6 @@ UNIX: <code>source cw_generate_pdf/Scripts/activate</code>
 ### You need to install [**wkhtmltox**](https://wkhtmltopdf.org/downloads.html)
 <ul>
   <li>Winodws Steps</li>
-  <ol>
   <li>Adjust the Environment variable depending on the directory you chosed to install</li>
   <li>
     <ol>
@@ -26,7 +25,6 @@ UNIX: <code>source cw_generate_pdf/Scripts/activate</code>
       <li>⬆️This is just an example but it must end with wkhtmltopdf\bin (or however you named it if you changed the original filepath⬆️</li>
     </ol>
   </li>
-  </ol>
   <li>Restarting the computer might be needed</li>
     <li>UNIX Steps</li>
   <li>
