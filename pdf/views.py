@@ -25,5 +25,6 @@ def accept(request):
             previous_work=previous_work,
             skills=skills,
         )
+        profile.save()
 
     return render(request, 'pdf/accept.html')
