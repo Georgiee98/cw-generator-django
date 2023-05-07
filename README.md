@@ -14,8 +14,9 @@ Windows: <code>source cw_generate_pdf/Scripts/activate.bat</code>
 UNIX: <code>source cw_generate_pdf/Scripts/activate</code>
 
 ### You need to install [**wkhtmltox**](https://wkhtmltopdf.org/downloads.html)
-<ol>
+<ul>
   <li>Winodws Steps</li>
+  <ol>
   <li>Adjust the Environment variable depending on the directory you chosed to install</li>
   <li>
     <ol>
@@ -25,6 +26,7 @@ UNIX: <code>source cw_generate_pdf/Scripts/activate</code>
       <li>⬆️This is just an example but it must end with wkhtmltopdf\bin (or however you named it if you changed the original filepath⬆️</li>
     </ol>
   </li>
+  </ol>
   <li>Restarting the computer might be needed</li>
     <li>UNIX Steps</li>
   <li>
@@ -33,7 +35,7 @@ UNIX: <code>source cw_generate_pdf/Scripts/activate</code>
       <li>use your package manager like brew install or apt install or whatever your system is running <code>brew install Caskroom/cask/wkhtmltopdf</code></li>
     </ol>
   </li>
-</ol>
+</ul>
 - Configure your Python interpreter to **cw_generate_pdf**
 ### Run: (be sure to be in the folder/directory of manage.py) 
 - <code>python manage.py runserver</code>
