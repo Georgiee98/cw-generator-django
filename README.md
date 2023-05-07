@@ -13,10 +13,10 @@ This project lets you create a CW only by fulfilling a simple form
 Windows: <code>source cw_generate_pdf/Scripts/activate.bat</code>
 UNIX: <code>source cw_generate_pdf/Scripts/activate</code>
 
-### You need to install [**wkhtmltox**](https://wkhtmltopdf.org/downloads.html))
+### You need to install [**wkhtmltox**](https://wkhtmltopdf.org/downloads.html)
 <ol>
   <li>Winodws Steps</li>
-  <li>adjust the Environment variable depending on the directory you chosed to install
+  <li>Adjust the Environment variable depending on the directory you chosed to install
     <ol>
       <li>Environment Variables</li>
       <li>Path --> Edit</li>
