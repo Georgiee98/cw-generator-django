@@ -17,14 +17,12 @@ UNIX: <code>source cw_generate_pdf/Scripts/activate</code>
 <ul>
   <li>Winodws Steps</li>
   <li>Adjust the Environment variable depending on the directory you chosed to install</li>
-  <li>
     <ol>
       <li>Environment Variables</li>
       <li>Path --> Edit</li>
       <li>C:\Program Files\wkhtmltopdf\bin</li>
       <li>⬆️This is just an example but it must end with wkhtmltopdf\bin (or however you named it if you changed the original filepath⬆️</li>
     </ol>
-  </li>
   <li>Restarting the computer might be needed</li>
     <li>UNIX Steps</li>
   <li>
