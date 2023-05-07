@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume</title>
-</head>
-<body>
-<h2>Resume</h2>
-</body>
+  </head>
+  <body>
+    <h2>{{user.name}}</h2>
+    <h2>{{user.email}}</h2>
+    <h2>{{user.phone}}</h2>
+    <hr />
+    <br />
+    <p>Summary</p>
+    <p>{{user.summary}}</p>
+    <p>Skills</p>
+    <p>{{user.skills}}</p>
+    <p>Education</p>
+    <p>{{user.university}}</p>
+    <ul>
+      <li>Degree: {{user.degree}}</li>
+    </ul>
+    <p>Skills</p>
+    <ul>
+      <li>{{user.skills}}</li>
+    </ul>
+  </body>
 </html>
