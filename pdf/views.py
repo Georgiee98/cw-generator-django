@@ -30,5 +30,5 @@ def accept(request):
     return render(request, 'pdf/accept.html')
 
 def resume(request, pk):
-    profile = Profile.objects.get(id=pk)
+    profile = Profile.objects.get(pk=pk)
     return render(request, 'pdf/resume.html', {'profile': profile})
