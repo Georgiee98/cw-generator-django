@@ -28,3 +28,7 @@ def accept(request):
         profile.save()
 
     return render(request, 'pdf/accept.html')
+
+def resume(request, pk):
+    profile = Profile.objects.get(id=pk)
+    return render(request, 'pdf/resume.html', {'profile': profile})
