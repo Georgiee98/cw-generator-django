@@ -17,6 +17,7 @@
       <div class="row">
         <div class="col-md-7">
           <form method="POST">
+            {% csrf_token %}
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Name</label>
               <input
@@ -98,6 +99,36 @@
               </div>
             </div>
             <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >University</label
+              >
+              <textarea
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1 university"
+                name="university"
+                aria-describedby="emailHelp"
+              ></textarea>
+              <div id="emailHelp" class="form-text">
+                We'll never share your University with anyone else.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Previous Work</label
+              >
+              <textarea
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1 previous_work"
+                name="university"
+                aria-describedby="emailHelp"
+              ></textarea>
+              <div id="emailHelp" class="form-text">
+                We'll never share your University with anyone else.
+              </div>
+            </div>
+            <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Skills</label>
               <textarea
                 type="email"
@@ -110,7 +141,6 @@
                 We'll never share your Skills with anyone else.
               </div>
             </div>
-
             <!-- Button -->
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
