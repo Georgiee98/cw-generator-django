@@ -1,5 +1,10 @@
 from django.shortcuts import render
 from .models import Profile
+import pdfkit
+from django.http import HttpResponse
+from django.template import loader
+import io
+
 # Create your views here.
 
 def accept(request):
@@ -31,4 +36,16 @@ def accept(request):
 
 def resume(request, pk):
     profile = Profile.objects.get(pk=pk)
-    return render(request, 'pdf/resume.html', {'profile': profile})
+    template = loader.get_template('pdf/resume.html')
+    # pass dynamic data (user data)
+    html = template.render({'profile': profile})
+    options = {
+        'page-size': 'Letter',
+        'encoding': 'UTF-8',
+    }
+    # takes html string and converts to pdf
+    pdf = pdfkit.from_string(html, False, options)
+    response = HttpResponse(pdf,content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment'
+    filename = 'resume.pdf'
+    return response
