@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Orders</title>
+</head>
+<body style="margin: 0; padding: 0; box-sizing: border-box; font-size: 13px; height: 100%; font-family: 'Roboto', sans-serif;">
+    <div style="padding: 2%; height: 100%; width: 100%;">
+        <div style="width:100%;">
+            <div style="float: left; width:50%;">
+                <img src="https://i.ibb.co/qxNBzh9/logo.png" alt="" width="200" height="200">
+            </div>
+            <div style="width: 50%; display:inline-block">
+                <h2 style="font-size: 24px;">Faktura</h2>
+                <div style="float: right;">
+                    <div style="float: left;">
+                        <p style="text-align: left; margin: 0;">Fakturadatum</p>
+                        <p style="text-align: left; margin: 0;">Phone: </p>
+                        <p style="text-align: left; margin: 0;">Email:</p>
+                    </div>
+                    <div style="float: right; margin-left: 20px;">
+                        <p style="margin: 0;">123123</p>
+                        <p style="margin: 0;">123123</p>
+                        <p style="margin: 0;">123123</p>
+                    </div>
+                </div>
+                <div style="width:100%; float:left; margin: 0;">
+                    <p style="font-weight: bold; margin: 0;"><strong>SBK SWEDEN AB</strong></p>
+                    <p style="font-weight: bold; margin: 0;"><strong>ZZZZZZZZZ</strong></p>
+                    <p style="font-weight: bold; margin: 0;"><strong>120 44 </strong></p>
+                    <p style="font-weight: bold; margin: 0;"><strong>SBK SWEDEN AB</strong></p>
+                </div>
+                </div>
+                </div>
+                <div style="padding: 30px 0px 15px 0px; float:left; width: 100%;">
+                    <div style="width: 50%; float: left;">
+                        <div style="float:left">
+                            <div style="float: left;">
+                                <p style="text-align: left; margin: 0;">Kundnr</p>
+                                <p style="text-align: left; margin: 0;">Er referens </p>
+                                <p style="text-align: left; margin: 0;">En VAT-nummer</p>
+                            </div>
+                            <div style="float: right; margin-left: 20px;">
+                                <p style="margin: 0;">32</p>
+                                <p style="margin: 0;">Lesna Havez</p>
+                                <p style="margin: 0;">SE12312312312</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="width: 50%; float: right;">
+                        <div style="float: left">
+                            <div style="float: left;">
+                                <p style="text-align: left; margin: 0;">Var Referens</p>
+                                <p style="text-align: left; margin: 0;">Betalningsvillkor </p>
+                                <p style="text-align: left; margin: 0;">Forfallodatum</p>
+                                <p style="text-align: left; margin: 0;">Drojsmalsranta</p>
+                                <p style="text-align: left; margin: 0;">Leveransdatum</p>
+                                <p style="text-align: left; margin: 0;">Vart ordernr</p>
+                            </div>
+                            <div style="float: right; margin-left: 20px;">
+                                <p style="margin: 0;">Vladimir Mitev</p>
+                                <p style="margin: 0;">10 dagar</p>
+                                <p style="margin: 0;">2020-20-12</p>
+                                <p style="margin: 0;">8%</p>
+                                <p style="margin: 0;">2020-20-12</p>
+                                <p style="margin: 0;">195</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 1%; width: 100%;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead style="border-bottom: 1px solid black;">
+                            <tr>
+                                <th style="text-align:left; font-size: 13px; font-weight: normal; padding: 10px 0px;">Artnr</th>
+                                <th style="text-align:left; font-size: 13px; font-weight: normal; padding: 10px 0px;">Benamning</th>
+                                <th style="text-align:center; font-size: 13px; font-weight: normal; padding: 10px 0px;">Lev ant</th>
+                                <th style="text-align:left; font-size: 13px; font-weight: normal; padding: 10px 0px;">Enh</th>
+                                <th style="text-align:right; font-size: 13px; font-weight: normal; padding: 10px 0px;">Pris</th>
+                                <th style="text-align:right; font-size: 13px; font-weight: normal; padding: 10px 0px;">Summa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in order.orderitem_set.all %}
+                            <tr>
+                                <td style="text-align:left; font-size: 13px; font-weight: normal; padding: 10px 0px;">{{ item.product.sku }}</td>
+                                <td style="text-align:left; font-size: 13px; font-weight: normal; padding: 10px 0px;">{{ item.product.name }}</td>
+                                <td style="text-align:center; font-size: 13px; font-weight: normal; padding: 10px 0px;">{{ item.total_price }}</td>
+                                <td style="text-align:left; font-size: 13px; font-weight: normal; padding: 10px 0px;">kg</td>
+                                <td style="text-align:right; font-size: 13px; font-weight: normal; padding: 10px 0px;">14,00</td>
+                                <td style="text-align:right; font-size: 13px; font-weight: normal; padding: 10px 0px;">{{ item.total_price }}</td>
+                            {% endfor %}
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="padding:2%; position:absolute; bottom:0; width:100%;">
+                    <div style="width:100%;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:left; font-size: 13px; font-weight: normal; padding: 5px 0px;">Exkl. moms</th>
+                                    <th style="text-align:left; font-size: 13px; font-weight: normal; padding: 5px 0px;">Moms</th>
+                                    <th style="text-align:center; font-size: 13px; font-weight: normal; padding: 5px 0px;">Oresavr</th>
+                                    <th style="text-align:center; font-size: 13px; font-weight: normal; padding: 5px 0px;">Totalt</th>
+                                    <th style="text-align:right; font-size: 13px; font-weight: bold; padding: 5px 0px;">ATT BETALA</th>
+                                </tr>
+                            </thead>
+                            <tbody style="border-bottom: 1px solid black;">
+                                <tr>
+                                    <td style="text-align:left; font-size: 13px; font-weight: normal; padding: 5px 0px;">45 360,00</td>
+                                    <td style="text-align:left; font-size: 13px; font-weight: normal; padding: 5px 0px;">5443,20</td>
+                                    <td style="text-align:center; font-size: 13px; font-weight: normal; padding: 5px 0px;">-0,20</td>
+                                    <td style="text-align:center; font-size: 13px; font-weight: normal; padding: 5px 0px;">{{ order.total_price }}</td>
+                                    <td style="text-align:right; font-size: 18px; font-weight: bold; padding: 5px 0px;">SEK {{ order.total_price }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="padding:10px 0px; width:100%;">
+                        <div style="float:left; width: 50%;">
+                            <p style="font-size: 13px; margin: 0;">Moms 12% 5 443,20 (45 360,00)</p>
+                        </div>
+                        <div style="float:right; text-align:right; width: 50%;">
+                            <p style="font-size: 13px; margin: 0;">IBAN SE71 8000 0845 2569 4946 4397 BIV SWESES</p>
+                        </div>
+                    </div>
+                    <div style="padding-top: 30px; width:100%;">
+                        <div style="float: left; width: 50%;">
+                            <div style="width: 100%;">
+                                <div style="float:left; width: 50%;">
+                                    <p style="font-size: 13px; margin: 0;">Adress</p>
+                                    <p style="font-size: 13px; margin: 0;">Balkan Mat i Sverige AB</p>
+                                    <p style="font-size: 13px; margin: 0;">Stinavagen 3 </p>
+
+                 <p style="font-size: 13px; margin: 0;">432 95 VARO</p>
+                                </div>
+                                <div style="float:right; text-align:right; width: 50%;">
+                                    <p style="font-size: 13px; margin: 0;">Telefon</p>
+                                    <p style="font-size: 13px; margin: 0;">0709-282828</p>
+                                    <p style="font-size: 13px; margin: 0;">E-post</p>
+                                    <p style="font-size: 13px; margin: 0;">info@balkanmat.se</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="float:right; text-align:right; width: 50%;">
+                            <p style="font-size: 13px; margin: 0;">Org. Nr. 559228-7823</p>
+                            <p style="font-size: 13px; margin: 0;">Bankgiro 5569-4946</p>
+                            <p style="font-size: 13px; margin: 0;">Momsreg. Nr. SE559228782301</p>
+                        </div>
+                    </div>
+                </div>
+                </body>
+                </html>
+

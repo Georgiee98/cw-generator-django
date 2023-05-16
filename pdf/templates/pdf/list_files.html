@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List of PDF Files</title>
+</head>
+<body>
+    <h1>List of PDF Files</h1>
+    <ul>
+    {% for pdf_file in pdf_files %}
+        <li>
+            {{ pdf_file }}
+            <a href="/pdf/download/{{ pdf_file }}" download>Download</a>
+        </li>
+    {% empty %}
+        <li>No PDF files available.</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

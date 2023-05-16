@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 13px;
+}
+html, body{
+    height: 100%;
+    font-size: 13px;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.container {
+    padding: 2%;
+    height: 100%;
+    width: 100%;
+}
+.text-right{
+    text-align: right;
+}
+.text-left{
+    text-align: left;
+}
+.padding-left-text{
+    padding-left: 10px;
+}
+p, td{
+    margin: 0;
+
+}
+.row{
+
+    width:100%;
+
+}
+.col{
+    width: 50%;
+}
+.row-left{
+    float: left;
+}
+.row-right{
+    float: right;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+table>thead{
+    border-top: 1px solid black;
+}
+
+table th, td{
+    font-size: 13px;
+    font-weight: normal;
+}
+.gap-left{
+    margin-left: 20px;
+}
+.main-table th, td{
+    padding: 10px 0px;
+}
+.secondary-table th, td{
+    padding: 5px 0px;
+}

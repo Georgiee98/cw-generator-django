@@ -17,9 +17,17 @@ from django.contrib import admin
 from django.urls import path, include
 from pdf import views
 
+app_name = 'pdf'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.accept, name='accept'),
     path('<int:pk>/', views.resume, name='resume'),
     path('list/', views.list, name='list'),
+    path('convert/', views.convert_to_pdf, name='convert_to_pdf'),
+    path('bedjo/', views.see, name='see'),
+    path('bedjo2/', views.bedjo2, name='see'),
+    path('bedjo3/', views.bedjo3, name='see'),
+    path('bedjo4/', views.bedjo4, name='see'),
+    path('bedjo5/', views.bedjo5, name='see'),
 ]

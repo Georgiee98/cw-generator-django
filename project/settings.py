@@ -11,6 +11,29 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+
+import pdfkit
+
+
+# Get the base directory of your project
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Set the path to the HTML file
+html_file = os.path.join(BASE_DIR, 'pdf', 'alex.html')
+
+
+# Set the path to the wkhtmltopdf binary
+WKHTMLTOPDF_PATH = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
+
+# Configure pdfkit with the path to the binary
+pdfkit_config = pdfkit.configuration(wkhtmltopdf=WKHTMLTOPDF_PATH)
+
+# Set the configuration in the Django settings
+WKHTMLTOPDF = pdfkit_config
+
+# Other Django settings...
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -51,11 +74,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'project.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+       'DIRS': [os.path.join(BASE_DIR, 'pdf', 'templates')],
+ # Specify your template directory here
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
